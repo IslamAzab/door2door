@@ -66,6 +66,7 @@ GEM
     faker (1.8.4)
       i18n (~> 0.5)
     ffi (1.9.18)
+    geocoder (1.4.4)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     hirb (0.7.3)
@@ -182,6 +183,7 @@ DEPENDENCIES
   debbie
   factory_girl_rails (~> 4.8)
   faker
+  geocoder (~> 1.4, >= 1.4.4)
   listen (>= 3.0.5, < 3.2)
   mysql2 (~> 0.4.9)
   puma (~> 3.7)
