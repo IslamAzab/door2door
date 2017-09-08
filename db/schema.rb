@@ -10,15 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170908150703) do
+ActiveRecord::Schema.define(version: 20170908155257) do
 
   create_table "vehicles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "uid"
+    t.integer "uuid"
     t.integer "vehicle_type"
     t.timestamp "timestamp"
     t.integer "heading"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude", limit: 24
+    t.float "longitude", limit: 24
   end
 
 end
