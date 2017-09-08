@@ -52,4 +52,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'geocoder', '~> 1.4', '>= 1.4.4'
 
-gem 'uuid', '~> 2.3', '>= 2.3.8'
+gem 'uuidtools', '~> 2.1', '>= 2.1.5'
