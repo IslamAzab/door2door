@@ -31,6 +31,10 @@ group :development, :test do
   # gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'debbie'
   gem 'rspec-rails', '~> 3.6', '>= 3.6.1'
+  gem 'factory_girl_rails', '~> 4.8'
+  gem 'shoulda-matchers', '~> 3.1', '>= 3.1.2'
+  gem 'faker'
+  gem 'database_cleaner'
 end
 
 group :development do
@@ -41,10 +45,6 @@ group :development do
 end
 
 group :test do
-  gem 'factory_girl_rails', '~> 4.8'
-  gem 'shoulda-matchers', '~> 3.1', '>= 3.1.2'
-  gem 'faker'
-  gem 'database_cleaner'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
