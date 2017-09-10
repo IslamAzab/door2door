@@ -14,6 +14,6 @@ class Vehicle < ApplicationRecord
   validate :timestamp_is_valid_datetime
 
   def timestamp_is_valid_datetime
-    errors.add(:timestamp, 'must be a valid datetime') if ((DateTime.parse(happened_at) rescue ArgumentError) == ArgumentError)
+    DateTime.parse(timestamp.to_s) rescue errors.add(:timestamp, 'must be a valid datetime')
   end
 end
