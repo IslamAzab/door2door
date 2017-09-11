@@ -4,6 +4,7 @@ class Vehicle < ApplicationRecord
 
   validates :uuid, format: { with: /[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/,
     message: "%{value} should be in UUID format." }
+  validates :vehicle_type, presence: true
   validates :latitude, inclusion: { in: -90..90,
     message: "%{value} should be between -90 and 90." }
   validates :longitude, inclusion: { in: -180..180,
