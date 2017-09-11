@@ -17,4 +17,14 @@ class Vehicle < ApplicationRecord
   def timestamp_is_valid_datetime
     DateTime.parse(timestamp.to_s) rescue errors.add(:timestamp, 'must be a valid datetime')
   end
+
+  def self.is_in_range? vehicle_params
+    begin
+      APP_CONFIG['range'] >= Geocoder::Calculations.distance_between(
+        [APP_CONFIG['center']['latitude'], APP_CONFIG['center']['longitude']],
+        [vehicle_params.dig(:latitude), vehicle_params.dig(:longitude)])
+    rescue Exception => e
+      false
+    end
+  end
 end
