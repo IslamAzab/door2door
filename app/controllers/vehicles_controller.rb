@@ -1,8 +1,12 @@
 class VehiclesController < ApplicationController
   # POST /vehicles
   def submit_emission
-    @vehicle = Vehicle.find_or_create_by!(uuid: vehicle_params.dig(:uuid), timestamp: vehicle_params.dig(:timestamp))
-    @vehicle.update!(vehicle_params)
+    @vehicle = Vehicle.find_by(uuid: vehicle_params.dig(:uuid), timestamp: vehicle_params.dig(:timestamp))
+    if @vehicle
+      @vehicle.update!(vehicle_params)
+    else
+      @vehicle = Vehicle.create!(vehicle_params)
+    end
 
     json_response(@vehicle, :created)
   end
