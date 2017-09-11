@@ -12,15 +12,18 @@
 
 ActiveRecord::Schema.define(version: 20170908222913) do
 
-  create_table "vehicles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "vehicles", force: :cascade do |t|
     t.string "uuid", limit: 36, null: false
     t.integer "vehicle_type"
-    t.timestamp "timestamp"
+    t.datetime "timestamp"
     t.integer "heading"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "latitude", limit: 24
-    t.float "longitude", limit: 24
+    t.float "latitude"
+    t.float "longitude"
   end
 
 end

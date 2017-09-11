@@ -82,4 +82,4 @@ production:
   <<: *default
   database: door2door_production
   username: door2door
-  password: <%= ENV['DOOR2DOOR_DATABASE_PASSWORD'] %>
+  password: door2door
